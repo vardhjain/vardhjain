@@ -63,9 +63,9 @@ At Swankey, I used session analytics and ML to identify setup friction; the targ
 
 **Recently updated projects** (latest repository push, not a new release):
 
-- [finos-mcp](https://github.com/vardhjain/finos-mcp) · 2026-10-30
+- [finos-mcp](https://github.com/vardhjain/finos-mcp) · 2026-11-02
+- [Secondsight](https://github.com/vardhjain/Secondsight) · 2026-11-02
 - [Ethiclens](https://github.com/vardhjain/Ethiclens) · 2026-10-27
-- [graphrag-pubmedqa-ablation](https://github.com/vardhjain/graphrag-pubmedqa-ablation) · 2026-10-27
 
 [Snapshot data](data/snapshot.json) · [MCP metric source](https://github.com/vardhjain/finos-mcp/blob/metrics/metrics.json) · [Measured commit](https://github.com/vardhjain/finos-mcp/commit/e2a80bbc5664769803350eca5b18c8842c4c9c86)
   
