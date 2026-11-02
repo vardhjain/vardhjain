@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="350" viewBox="0 0 440 350" role="img" aria-labelledby="title desc">
 <title id="title">Public workbench snapshot</title>
-<desc id="desc">8 public projects; 29 mcp tools; 281 mcp tests passed; 94.9% mcp coverage. Fetched 2026-11-02T01:01:22Z. MCP metrics measured 2026-10-30T04:49:55Z. 0 failing MCP tests in source snapshot.</desc>
+<desc id="desc">8 public projects; 29 ai-callable tools; 281 mcp tests passed; 94.9% mcp coverage. Fetched 2026-11-02T01:01:22Z. MCP metrics measured 2026-10-30T04:49:55Z. 0 failing MCP tests in source snapshot.</desc>
 <style>text{font-family:Arial,Helvetica,sans-serif}.label{font-family:Consolas,monospace;letter-spacing:1px}</style>
 <rect width="440" height="350" rx="18" fill="#101c2c"/>
 <rect x=".5" y=".5" width="439" height="349" rx="18" fill="none" stroke="#2b3d51"/>
@@ -9,7 +9,8 @@
 <text x="26" y="100" fill="#67e8c4" font-size="35" font-weight="700">8</text>
 <text x="26" y="125" fill="#c3d4e5" font-size="10" class="label">PUBLIC PROJECTS</text>
 <text x="234" y="100" fill="#67e8c4" font-size="35" font-weight="700">29</text>
-<text x="234" y="125" fill="#c3d4e5" font-size="10" class="label">MCP TOOLS</text>
+<text x="234" y="125" fill="#c3d4e5" font-size="10" class="label">AI-CALLABLE TOOLS</text>
+<text x="234" y="143" fill="#819bb3" font-size="9" class="label">ACROSS 3 MCP SERVERS</text>
 <text x="26" y="200" fill="#67e8c4" font-size="35" font-weight="700">281</text>
 <text x="26" y="225" fill="#c3d4e5" font-size="10" class="label">MCP TESTS PASSED</text>
 <text x="234" y="200" fill="#67e8c4" font-size="35" font-weight="700">94.9%</text>

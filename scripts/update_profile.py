@@ -114,7 +114,7 @@ def render_card(data, mobile=False):
     mcp = data["mcp"]
     width, height = (440, 350) if mobile else (900, 230)
     cells = [(str(data["public_projects"]), "PUBLIC PROJECTS"),
-             (str(mcp["tools"]), "MCP TOOLS"),
+             (str(mcp["tools"]), "AI-CALLABLE TOOLS"),
              (str(mcp["tests_passed"]), "MCP TESTS PASSED"),
              (f'{mcp["coverage_pct"]:.1f}%', "MCP COVERAGE")]
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
@@ -133,6 +133,8 @@ def render_card(data, mobile=False):
         y = 100 + (index // 2) * 100 if mobile else 108
         parts += [text(x, y, value, 35 if mobile else 38, "#67e8c4", 'font-weight="700"'),
                   text(x, y + 25, label, 10, "#c3d4e5", 'class="label"')]
+        if index == 1:
+            parts.append(text(x, y + 43, "ACROSS 3 MCP SERVERS", 9, "#819bb3", 'class="label"'))
     line_y = 242 if mobile else 158
     parts.append(f'<path d="M26 {line_y}H{width-26}" stroke="#2b3d51"/>')
     fetched = data["fetched_at"].replace("T", " ").replace("Z", " UTC")
@@ -148,13 +150,17 @@ def render_card(data, mobile=False):
 
 def render_section(data):
     m = data["mcp"]
-    alt = (f'{data["public_projects"]} public projects; {m["tools"]} MCP tools; '
+    alt = (f'{data["public_projects"]} public projects; {m["tools"]} AI-callable tools across 3 MCP servers; '
            f'{m["tests_passed"]} MCP tests passed; {m["coverage_pct"]:.1f}% coverage. '
            f'Snapshot {data["fetched_at"][:10]}.')
     lines = [START, '<picture>',
              '  <source media="(max-width: 600px)" srcset="assets/workbench-mobile.svg">',
              f'  <img src="assets/workbench.svg" alt="{escape(alt, quote=True)}" width="100%">',
-             '</picture>', '', '**Recently updated projects** (latest repository push, not a new release):', '']
+             '</picture>', '',
+             f'finos-mcp exposes **{m["tools"]} AI-callable tools across 3 MCP servers**. '
+             'These are functions an AI assistant can call to look up a governance control, '
+             'validate a trade document, or find an FDC3 action.', '',
+             '**Recently updated projects** (by latest repository push):', '']
     for repo in data["recent"]:
         lines.append(f'- [{repo["name"]}](https://github.com/{OWNER}/{repo["name"]}) · {repo["pushed_at"][:10]}')
     lines += ['', f'[Snapshot data](data/snapshot.json) · '
