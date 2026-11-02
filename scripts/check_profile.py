@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    assert "\u2014" not in readme, "Em dash in README"
     links = re.findall(r'\]\(([^\s)]+)\)|(?:src|srcset)="([^"]+)"', readme)
     for pair in links:
         link = next(part for part in pair if part)
