@@ -1,0 +1,64 @@
+name: Profile snapshot
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'data/**'
+      - 'assets/workbench*.svg'
+      - 'README.md'
+  schedule:
+    - cron: '23 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate profile
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Exercise public-data and failure cases
+        run: python3 -m unittest discover -s tests -v
+      - name: Check generated output and local links
+        run: |
+          python3 scripts/update_profile.py --check
+          python3 scripts/check_profile.py
+
+  refresh:
+    name: Refresh public snapshot
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+      - name: Fetch and validate public data
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/update_profile.py
+          python3 scripts/update_profile.py --check
+          python3 scripts/check_profile.py
+      - name: Commit only snapshot outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md assets/workbench.svg assets/workbench-mobile.svg data/snapshot.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'chore: refresh public profile snapshot'
+          git push origin HEAD:main
