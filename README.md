@@ -58,7 +58,7 @@ At Swankey, I used session analytics and ML to identify setup friction; the targ
 <!-- PULSE:START -->
 <picture>
   <source media="(max-width: 600px)" srcset="assets/workbench-mobile.svg">
-  <img src="assets/workbench.svg" alt="8 public projects; 29 MCP tools; 281 MCP tests passed; 94.9% coverage. Snapshot 2026-11-04." width="100%">
+  <img src="assets/workbench.svg" alt="8 public projects; 29 MCP tools; 281 MCP tests passed; 94.9% coverage. Snapshot 2026-11-05." width="100%">
 </picture>
 
 **Recently updated projects** (latest repository push, not a new release):
