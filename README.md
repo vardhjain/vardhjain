@@ -58,7 +58,7 @@ At Swankey, I used session analytics and ML to identify setup friction; the targ
 <!-- PULSE:START -->
 <picture>
   <source media="(max-width: 600px)" srcset="assets/workbench-mobile.svg">
-  <img src="assets/workbench.svg" alt="8 public projects; 29 MCP tools; 281 MCP tests passed; 94.9% coverage. Snapshot 2026-11-06." width="100%">
+  <img src="assets/workbench.svg" alt="8 public projects; 29 MCP tools; 285 MCP tests passed; 94.9% coverage. Snapshot 2026-11-07." width="100%">
 </picture>
 
 **Recently updated projects** (latest repository push, not a new release):
@@ -67,7 +67,7 @@ At Swankey, I used session analytics and ML to identify setup friction; the targ
 - [Secondsight](https://github.com/vardhjain/Secondsight) · 2026-11-02
 - [Ethiclens](https://github.com/vardhjain/Ethiclens) · 2026-10-27
 
-[Snapshot data](data/snapshot.json) · [MCP metric source](https://github.com/vardhjain/finos-mcp/blob/metrics/metrics.json) · [Measured commit](https://github.com/vardhjain/finos-mcp/commit/bee53b9aa32508e36877590ccb0cb9aa8c23636d)
+[Snapshot data](data/snapshot.json) · [MCP metric source](https://github.com/vardhjain/finos-mcp/blob/metrics/metrics.json) · [Measured commit](https://github.com/vardhjain/finos-mcp/commit/93e95163296b13f37ed62b1e20f1ec9c92ad6cf2)
   
 MCP run: 2026-11-06; 0 failing tests in that snapshot. Project count excludes forks, archived repositories, and this profile.
 <!-- PULSE:END -->
