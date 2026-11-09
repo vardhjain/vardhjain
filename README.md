@@ -58,13 +58,13 @@ At Swankey, I used session analytics and ML to identify setup friction; the targ
 <!-- PULSE:START -->
 <picture>
   <source media="(max-width: 600px)" srcset="assets/workbench-mobile.svg">
-  <img src="assets/workbench.svg" alt="8 public projects; 29 MCP tools; 285 MCP tests passed; 94.9% coverage. Snapshot 2026-11-08." width="100%">
+  <img src="assets/workbench.svg" alt="8 public projects; 29 MCP tools; 285 MCP tests passed; 94.9% coverage. Snapshot 2026-11-09." width="100%">
 </picture>
 
 **Recently updated projects** (latest repository push, not a new release):
 
-- [finos-mcp](https://github.com/vardhjain/finos-mcp) · 2026-11-06
-- [Secondsight](https://github.com/vardhjain/Secondsight) · 2026-11-02
+- [finos-mcp](https://github.com/vardhjain/finos-mcp) · 2026-11-09
+- [Secondsight](https://github.com/vardhjain/Secondsight) · 2026-11-09
 - [Ethiclens](https://github.com/vardhjain/Ethiclens) · 2026-10-27
 
 [Snapshot data](data/snapshot.json) · [MCP metric source](https://github.com/vardhjain/finos-mcp/blob/metrics/metrics.json) · [Measured commit](https://github.com/vardhjain/finos-mcp/commit/93e95163296b13f37ed62b1e20f1ec9c92ad6cf2)
